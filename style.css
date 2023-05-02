@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+:root {
+  ---pr-color: #313130;
+}
+
 * {
+  z-index: 2;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +14,98 @@ body {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
+  color: #f3fff4;
 }
+
+/* navbar start */
+.navbar {
+  z-index: 3;
+}
+.navbar-brand {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+.btn-secondary {
+  color: var(---pr-color);
+  width: 130px;
+  border-radius: 8px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+}
+
+.btn-primary {
+  color: white;
+  width: 100px;
+  border-radius: 8px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: var(---pr-color);
+}
+
+/* hero start */
+#hero {
+  background-color: #313130;
+  height: 100vh;
+  width: 100%;
+}
+
+.img-hero {
+  z-index: 1;
+}
+
+.hero-tagline h1 {
+  font-family: 700;
+  font-size: 40px;
+  line-height: 60px;
+  color: #f3fff4;
+}
+
+.hero-tagline p {
+  font-size: 16px;
+  color: white;
+  font-size: 500;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  line-height: 30px;
+}
+
+.button-lg-primary {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(---pr-color);
+  font-size: 20px;
+  border: none;
+  font-weight: 700;
+}
+
+/* about */
+strong {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.about-title p {
+  margin-top: 30px;
+}
+
+/* testimonial */
+
 .main-parent {
   width: 100%;
   height: 100vh;
@@ -72,4 +168,152 @@ body {
 .form-wrap form .account-have a {
   color: rgb(34, 34, 34);
   text-decoration: none;
+}
+
+.wrapper {
+  background: #ececec;
+  padding: 0 20px 0 20px;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+/* .row {
+  width: 900px;
+  height: 550px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+} */
+.side-image {
+  background-image: url("images/loginbg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 10px 0 0 10px;
+}
+/* img {
+  width: 35px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+} */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text p {
+  color: #fff;
+  font-size: 18px;
+}
+i {
+  font-weight: 400;
+  font-size: 15px;
+}
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.input-box {
+  width: 330px;
+  box-sizing: border-box;
+}
+.input-box header {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 45px;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 10px 0 10px;
+}
+.input {
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin-bottom: 20px;
+  color: #40414a;
+}
+.input-box .input-field label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input-field .input:focus ~ label {
+  top: -10px;
+  font-size: 13px;
+}
+.input-field .input:valid ~ label {
+  top: -10px;
+  font-size: 13px;
+  color: #5d5076;
+}
+.input-field .input:focus,
+.input-field .input:valid {
+  border-bottom: 1px solid #743ae1;
+}
+.submit {
+  border: none;
+  outline: none;
+  height: 45px;
+  background: #ececec;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+.submit:hover {
+  background: rgba(37, 95, 156, 0.9);
+  color: #fff;
+}
+.signin {
+  text-align: center;
+  font-size: small;
+  margin-top: 25px;
+}
+span a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #000;
+  transition: 0.5s;
+}
+span a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+@media only screen and (max-width: 768px) {
+  .side-image {
+    border-radius: 10px 10px 0 0;
+  }
+  img {
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    left: 47%;
+  }
+  .text {
+    position: absolute;
+    top: 70%;
+    text-align: center;
+  }
+  .text p,
+  i {
+    font-size: 17px;
+  }
+  /* .row {
+    max-width: 420px;
+    width: 100%;
+  } */
 }
